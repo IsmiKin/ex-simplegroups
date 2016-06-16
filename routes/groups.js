@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
       sendImmediately: true
     });
     Request.end(function(response){
+      response.body.endpoint = process.env.endpoint;
       res.status(200).send(response.body);
     });
 });
@@ -31,6 +32,7 @@ router.get('/:groupid', function(req, res, next) {
       sendImmediately: true
     });
     Request.end(function(response){
+      response.body.endpoint = process.env.endpoint;
       res.status(200).send(response.body);
     });
 });
